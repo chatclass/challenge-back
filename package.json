@@ -1,0 +1,27 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Back-End Challenge for ChatClass",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "tests": "npm -- test --detectOpenHandles -i",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "dotenv": "^10.0.0",
+    "eventemitter2": "^6.4.4",
+    "jest": "^27.0.6",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-compose": "^4.1.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^10.0.0",
+    "mongoose": "^5.13.5",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.4"
+  }
+}
