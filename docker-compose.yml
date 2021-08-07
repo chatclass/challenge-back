@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  mongo-db:
+    image: mongo:4.2
+    container_name: mongo-db
+    restart: always
+    ports:
+      - 27017:27017
+    logging:
+      driver: none
+  app:
+    image: node:lts
+    environment:
+      DB_URL: mongo-db:27017/ChatClass
+      APP_PORT: 3000
+    container_name: nodejs-api
+    restart: on-failure:10
+    depends_on:
+      - mongo-db
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+    working_dir: /usr/app
+    command: ./scripts/start.sh
