@@ -1,0 +1,156 @@
+{
+  "info": {
+    "_postman_id": "97357230-9bd6-4776-85dd-cf78ca3e79ca",
+    "name": "ChatClass",
+    "description": "Postman Collection for ChatClass Back-end challange",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Books",
+      "item": [
+        {
+          "name": "Create Book",
+          "id": "45ed7cf8-985e-4609-877d-cc5a1a784761",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Livro 4\",\n    \"edition\":\"V4\",\n    \"publication_year\":\"1998\",\n    \"authors\":[\"610dc5e7988f0b005ca4ba29\"]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{host}}/books"
+          },
+          "response": []
+        },
+        {
+          "name": "GetAll Books",
+          "id": "bc61c142-94ef-4f64-bdad-d8a4fefd8038",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/books?pageSize=10&page=0",
+              "host": ["{{host}}"],
+              "path": ["books"],
+              "query": [
+                { "key": "pageSize", "value": "10" },
+                { "key": "page", "value": "0" }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Book",
+          "id": "f057f74b-773c-4639-80b9-af790b47a714",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/books/:id",
+              "host": ["{{host}}"],
+              "path": ["books", ":id"],
+              "variable": [{ "key": "id", "value": "" }]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Book",
+          "id": "5da971b4-5243-4398-8edc-921642a1fbd1",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/books/:id",
+              "host": ["{{host}}"],
+              "path": ["books", ":id"],
+              "variable": [{ "key": "id", "value": "" }]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Book",
+          "id": "58794c1c-62c3-4279-ba63-f066f8bebe0a",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Atualizando Nome\",\n    \"edition\":\"V3\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{host}}/books/:id",
+              "host": ["{{host}}"],
+              "path": ["books", ":id"],
+              "variable": [{ "key": "id", "value": "" }]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "6e3cda34-c442-4e20-9ac0-5e552b9f8819"
+    },
+    {
+      "name": "Authors",
+      "item": [
+        {
+          "name": "Create Authors",
+          "id": "8507ec53-c90d-480a-ba28-c1b9e455fd60",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Hugo\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{host}}/authors"
+          },
+          "response": []
+        },
+        {
+          "name": "GetAll Authors",
+          "id": "bf0060e1-d122-42de-805d-f8fdb7b64ba1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/authors?pageSize=50&page=0",
+              "host": ["{{host}}"],
+              "path": ["authors"],
+              "query": [
+                { "key": "pageSize", "value": "50" },
+                { "key": "page", "value": "0" }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "c3db21dc-fca9-441a-92b8-d6ab5436b293"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "221f461d-feb5-44ae-8ca0-b10f3212b9da",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "2674a2c0-640b-46ac-aff4-9ceef5bd73dc",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ]
+}
