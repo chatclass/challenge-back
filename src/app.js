@@ -3,9 +3,8 @@ const logger = require("koa-logger");
 const bodyParser = require("koa-bodyparser");
 const errorHandling = require("../src/middlewares/errorHandling");
 const { connectDatabase } = require("../db/index");
-require("dotenv").config();
-
 const router = require("../src/routes/routes");
+require("dotenv").config();
 
 const app = new Koa();
 
