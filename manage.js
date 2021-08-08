@@ -7,7 +7,7 @@ const { connectDatabase } = require("./db/index");
   try {
     const args = process.argv.slice(2);
 
-    const pathToFile = args[1];
+    const pathToFile = args[0];
 
     const csvData = await csvtojson().fromFile(pathToFile);
 
